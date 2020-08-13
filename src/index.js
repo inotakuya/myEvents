@@ -1,10 +1,10 @@
 import React from "react"
 import ReactDOM from "react-dom"
-import App from "./App"
+import App from "./components/App"
 
 ReactDOM.render(
-  <React.StrictMode>
+  <React.Fragment>
     <App />
-  </React.StrictMode>,
+  </React.Fragment>,
   document.getElementById("root")
 )

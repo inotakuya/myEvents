@@ -18,7 +18,7 @@ const Events = () => {
           </tr>
         </thead>
         <tbody>
-          {state.map((event, index) => (
+          {state.events.map((event, index) => (
             <Event key={index} event={event} />
           ))}
         </tbody>
@@ -28,7 +28,9 @@ const Events = () => {
 }
 
 Events.propTypes = {
-  state: PropTypes.array,
+  state: PropTypes.shape({
+    events: PropTypes.array,
+  }),
   dispatch: PropTypes.func,
 }
 export default Events

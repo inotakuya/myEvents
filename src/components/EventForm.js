@@ -50,7 +50,11 @@ const EventFrom = () => {
         <button className="btn btn-primary" onClick={addEvent} disabled={unCreatable}>
           イベントを作成する
         </button>
-        <button className="btn btn-danger" onClick={deleteAllEvents} disabled={state.length === 0}>
+        <button
+          className="btn btn-danger"
+          onClick={deleteAllEvents}
+          disabled={state.events.length === 0}
+        >
           すべてのイベントを削除する
         </button>
       </form>
@@ -59,7 +63,9 @@ const EventFrom = () => {
 }
 
 EventFrom.propTypes = {
-  state: PropTypes.array,
+  state: PropTypes.shape({
+    events: PropTypes.array,
+  }),
   dispatch: PropTypes.func,
 }
 export default EventFrom
